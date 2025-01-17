@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+    <!-- Font Awesome -->
+
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet"/>-->
+        <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <title>Bootstrap Example</title>
+    <!-- MDB -->
+
+</head>
+<body class="bg-body">
+
+<!-- Example Code -->
+<nav class="navBeta">
+    <!-- Logo and Name (left side) -->
+    <div class="navBeta-left">
+        <img src="" th:src="@{/image/49643.jpg}" alt="Logo" class="navBeta-logo">
+        <a href="#" class="navBeta-brand text-uppercase">contact saving cloud</a>
+    </div>
+
+    <!-- Hamburger Menu (toggle) -->
+    <div class="navBeta-toggler" onclick="toggleNavbar()">
+        <i class="fas fa-bars text-white"></i>
+    </div>
+
+    <!-- Navbar Links (right side) -->
+    <div class="navBeta-links" id="navBetaLinks">
+        <ul class="navBeta-nav text-uppercase">
+            <li><a href="/cloud/home">Home</a></li>
+            <li><a href="/cloud/about">About</a></li>
+            <li><a href="/cloud/login">Login</a></li>
+            <li><a href="/cloud/signup">Signup</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div th:replace="${content}"></div>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+<script> // Function to toggle the navBeta (expand and collapse on mobile)
+function toggleNavbar() {
+
+    let navBetaLinks = document.getElementById('navBetaLinks');
+    navBetaLinks.classList.toggle('expanded');
+    navBetaLinks.classList.toggle('collapsed');
+}
+</script>
+<!-- End Example Code -->
+</body>
+</html>

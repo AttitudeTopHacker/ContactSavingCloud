@@ -1,0 +1,113 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Container */
+.navBeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0d898d;
+    padding: 10px 30px;
+    position: relative;
+    z-index: 67657;
+}
+
+/* Logo and Name on the Left */
+.navBeta-left {
+    display: flex;
+    align-items: center;
+}
+
+.navBeta-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.navBeta-brand {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Navbar Links (right side) */
+.navBeta-links {
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s ease-in-out; /* Smooth dropdown transition */
+
+}
+
+
+.navBeta-links ul {
+    list-style: none;
+    display: flex;
+ margin-bottom: 0!important;
+
+}
+
+.navBeta-links li {
+
+    margin-left: 20px;
+}
+
+.navBeta-links a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+.navBeta-links a:hover {
+    color: #007bff;
+}
+
+/* Hamburger Menu (Only visible on small screens) */
+.navBeta-toggler {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+justify-content: center;
+}
+
+/* Mobile Navbar Collapse */
+.navBeta-links.collapsed {
+    display: none;
+    max-height: 0; /* Ensure it's hidden initially */
+}
+
+.navBeta-links.expanded {
+    display: block;
+    max-height: 500px; /* Set a high value to allow space for the links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navBeta-links {
+        width: 100%;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #0d898d;
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .navBeta-toggler {
+        display: block;
+    }
+
+    .navBeta-links ul {
+        flex-direction: column;
+        padding-left: 30px;
+
+    }
+
+    .navBeta-links li {
+        margin: 10px 0;
+    }
+}

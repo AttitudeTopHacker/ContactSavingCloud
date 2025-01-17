@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{user_dash/dashboard::layout(~{::form})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--private int c_id;-->
+<!--private String firstName;-->
+<!--private String lastName;-->
+<!--private String email;-->
+<!--private String phone;-->
+<!--private String image_c;-->
+<!--private String work;-->
+<!--@ManyToOne-->
+<!--private User user;-->
+
+<form th:action="@{/user/add/contact}" method="post" enctype="multipart/form-data">
+    <div  class=" "  th:text="${message.getContent()}" role="alert" th:classappend="${message.getType()}">
+
+    </div>
+    <div class="mb-2">
+
+        <label for="exampleInputEmail2" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" name="firstName">
+    </div>
+
+    <div class="mb-2">
+        <label for="exampleInputEmail3" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp" name="lastName">
+    </div>
+    <div class="mb-2">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    </div>
+    <div class="mb-2">
+        <label for="exampleInputPassword4" class="form-label">Phone</label>
+        <input type="password" class="form-control" id="exampleInputPassword4" name="phone">
+    </div>
+    <div class="input-group mb-2">
+        <input type="file" class="form-control" id="inputGroupFile02" name="image">
+        <label class="input-group-text" for="inputGroupFile02" >Upload</label>
+    </div>
+    <div class="mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">work textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="work"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
